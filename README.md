@@ -12,7 +12,7 @@ Image Manipulator is a Java image processing application with text-based, GUI, a
 # **Final Product** <br>
 The GUI is shown below.
 
-![GUI](ImageLoadedProgramScreenshotGUI.png)
+![GUI](FinalProductGUI.png)
 
 
 
