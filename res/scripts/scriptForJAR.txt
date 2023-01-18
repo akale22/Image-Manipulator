@@ -1,0 +1,51 @@
+
+load Square.ppm square
+
+brighten 10 square square-brighter
+
+darken 10 square square-darker
+
+vertical-flip square square-vertical
+
+horizontal-flip square square-horizontal
+
+horizontal-flip square-vertical square-vertical-horizontal
+
+red-component square square-red-component
+
+green-component square square-green-component
+
+blue-component square square-blue-greyscale
+
+value-component square square-value-component
+
+intensity-component square square-intensity-component
+
+luma-component square square-luma-component
+
+blur square square-blurred
+
+sharpen square square-sharpened
+
+greyscale square square-greyscale
+
+sepia square square-sepia
+
+save square-brighter.ppm square-brighter
+
+save square-brighter.png square-brighter
+
+save square-brighter.jpg square-brighter
+
+save square-brighter.bmp square-brighter
+
+save square-blurred.ppm square-blurred
+
+save square-sharpened.ppm square-sharpened
+
+save square-greyscale.ppm square-greyscale
+
+save square-sepia.ppm square-sepia
+
+load family/family.ppm square
+
