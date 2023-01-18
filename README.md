@@ -6,10 +6,10 @@
 
 #### Anshul Shirude - Khoury College of Computer Science & College of Science, Northeastern University <br>
 
-# **Description** <br>
+### **Description** <br>
 Image Manipulator is a Java image processing application with text-based, GUI, and command line functionality. It currently contains 10+ features including: uploading an image, saving an image to a device, flipping (vertical and horizontal), brightening/dimming, greyscaling, blurring, sharpening, applying a sepia filter, and downsizing an image. The application currently allows users to load or save an image in the formats .jpg, jpng, .ppm, and .bmp. When using the GUI, a histogram also displays the frequencies of each value (between 0-255) for the red, green, and blue values of each pixel. All functionality has been properly tested with JUnit.
 
-# **Final Product** <br>
+### **Final Product** <br>
 The GUI is shown below.
 
 ![GUI](FinalProductGUI.png)
@@ -17,7 +17,7 @@ The GUI is shown below.
 
 
 
-# **How to Run the Program with the Text-Based Functionality** <br>
+### **How to Run the Program with the Text-Based Functionality** <br>
 
 Instructions on how to perform image manipulations on the family.ppm file located in the res/ folder.
 
