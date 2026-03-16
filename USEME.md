@@ -64,6 +64,18 @@ Click the button to apply the sepia color transformation to the image.
 ### **Downsize**
 Click the button and enter positive integers for how much you would like to decrease the width 
 and height percentage of the image.
+
+### **Edge Detect**
+Click the button to highlight image edges.
+
+### **Auto Contrast**
+Click the button to stretch contrast across RGB channels automatically.
+
+### **Rotate Clockwise**
+Click the button to rotate the image by 90 degrees clockwise.
+
+### **Rotate Counterclockwise**
+Click the button to rotate the image by 90 degrees counterclockwise.
 <br>
 
 ### **Saving an Image**
@@ -80,5 +92,4 @@ Make sure that you adhere to the appropriate constraints when performing an imag
 ### **Contact** <br>
 #### Aryan Kale - kale.ar@northeastern.edu <br>
 #### Anshul Shirude - shirude.a@northeastern.edu <br>
-
 

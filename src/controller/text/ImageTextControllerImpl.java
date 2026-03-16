@@ -9,11 +9,15 @@ import java.util.function.Function;
 import controller.commands.Blur;
 import controller.commands.Brighten;
 import controller.commands.Darken;
+import controller.commands.EdgeDetect;
 import controller.commands.Flip;
 import controller.commands.GreyscaleColorTransformation;
 import controller.commands.GreyscaleComponent;
 import controller.commands.ImageCommand;
 import controller.commands.Load;
+import controller.commands.AutoContrast;
+import controller.commands.RotateClockwise;
+import controller.commands.RotateCounterClockwise;
 import controller.commands.Save;
 import controller.commands.Sepia;
 import controller.commands.Sharpen;
@@ -84,6 +88,11 @@ public class ImageTextControllerImpl implements ImageTextController {
     knownCommands.put("sharpen", s -> new Sharpen(s.next(), s.next()));
     knownCommands.put("greyscale", s -> new GreyscaleColorTransformation(s.next(), s.next()));
     knownCommands.put("sepia", s -> new Sepia(s.next(), s.next()));
+    knownCommands.put("edge-detect", s -> new EdgeDetect(s.next(), s.next()));
+    knownCommands.put("auto-contrast", s -> new AutoContrast(s.next(), s.next()));
+    knownCommands.put("rotate-clockwise", s -> new RotateClockwise(s.next(), s.next()));
+    knownCommands.put("rotate-counterclockwise",
+        s -> new RotateCounterClockwise(s.next(), s.next()));
   }
 
   @Override

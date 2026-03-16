@@ -48,6 +48,10 @@ public class ImageGUIViewImpl extends JFrame implements ImageGUIView {
   private final JButton greyscaleButton;
   private final JButton sepiaButton;
   private final JButton downsizeButton;
+  private final JButton edgeDetectButton;
+  private final JButton autoContrastButton;
+  private final JButton rotateClockwiseButton;
+  private final JButton rotateCounterClockwiseButton;
   private final JPanel mainPanel;
   private final JLabel imageLabel;
   private final HistogramImpl histogram;
@@ -82,7 +86,7 @@ public class ImageGUIViewImpl extends JFrame implements ImageGUIView {
 
     // creating the manipulation button panel
     JPanel manipulationButtonPanel = new JPanel();
-    manipulationButtonPanel.setLayout(new GridLayout(15, 1));
+    manipulationButtonPanel.setLayout(new GridLayout(19, 1));
     manipulationButtonPanel.setBorder(BorderFactory.createTitledBorder("Manipulations"));
     buttonPanel.add(manipulationButtonPanel);
 
@@ -171,6 +175,26 @@ public class ImageGUIViewImpl extends JFrame implements ImageGUIView {
     downsizeButton.setActionCommand("downsize");
     manipulationButtonPanel.add(downsizeButton);
 
+    // adding edge detect button
+    edgeDetectButton = new JButton("edge detect");
+    edgeDetectButton.setActionCommand("edge detect");
+    manipulationButtonPanel.add(edgeDetectButton);
+
+    // adding auto contrast button
+    autoContrastButton = new JButton("auto contrast");
+    autoContrastButton.setActionCommand("auto contrast");
+    manipulationButtonPanel.add(autoContrastButton);
+
+    // adding rotate clockwise button
+    rotateClockwiseButton = new JButton("rotate clockwise");
+    rotateClockwiseButton.setActionCommand("rotate clockwise");
+    manipulationButtonPanel.add(rotateClockwiseButton);
+
+    // adding rotate counterclockwise button
+    rotateCounterClockwiseButton = new JButton("rotate counterclockwise");
+    rotateCounterClockwiseButton.setActionCommand("rotate counterclockwise");
+    manipulationButtonPanel.add(rotateCounterClockwiseButton);
+
     // making a panel for the image and the histogram
     JPanel mediaPanel = new JPanel();
     mediaPanel.setLayout(new BoxLayout(mediaPanel, BoxLayout.Y_AXIS));
@@ -234,6 +258,10 @@ public class ImageGUIViewImpl extends JFrame implements ImageGUIView {
     greyscaleButton.addActionListener(listener);
     sepiaButton.addActionListener(listener);
     downsizeButton.addActionListener(listener);
+    edgeDetectButton.addActionListener(listener);
+    autoContrastButton.addActionListener(listener);
+    rotateClockwiseButton.addActionListener(listener);
+    rotateCounterClockwiseButton.addActionListener(listener);
   }
 
   @Override
@@ -292,7 +320,6 @@ public class ImageGUIViewImpl extends JFrame implements ImageGUIView {
     JOptionPane.showMessageDialog(mainPanel, s);
   }
 }
-
 
 
 

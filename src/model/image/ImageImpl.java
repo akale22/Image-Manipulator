@@ -270,32 +270,28 @@ public class ImageImpl implements Image {
    * @return a new Pixel at the specified location after the filter has been applied
    */
   private Pixel applyKernelToPixel(int i, int j, double[][] kernel) {
-    int red = 0;
-    int green = 0;
-    int blue = 0;
+    double red = 0;
+    double green = 0;
+    double blue = 0;
 
     int matrixSize = kernel.length;
 
     for (int r = 0; r < matrixSize; r++) {
       for (int c = 0; c < matrixSize; c++) {
 
-        try {
-          red += kernel[r][c] * pixels[i + (r - (matrixSize / 2))][j + (c - (matrixSize / 2))]
-                  .getRed();
-          green += kernel[r][c] * pixels[i + (r - (matrixSize / 2))][j + (c - (matrixSize / 2))]
-                  .getGreen();
-          blue += kernel[r][c] * pixels[i + (r - (matrixSize / 2))][j + (c - (matrixSize / 2))]
-                  .getBlue();
-        } catch (ArrayIndexOutOfBoundsException e) {
-          // DO NOTHING if we are trying to access an index out of bounds because that means
-          // that that spot doesn't exist and doesn't contribute to the new value of a component
+        int pixelX = i + (r - (matrixSize / 2));
+        int pixelY = j + (c - (matrixSize / 2));
+
+        if (pixelX >= 0 && pixelX < this.width && pixelY >= 0 && pixelY < this.height) {
+          red += kernel[r][c] * pixels[pixelX][pixelY].getRed();
+          green += kernel[r][c] * pixels[pixelX][pixelY].getGreen();
+          blue += kernel[r][c] * pixels[pixelX][pixelY].getBlue();
         }
       }
     }
-    red = this.enforceConstraints(red);
-    green = this.enforceConstraints(green);
-    blue = this.enforceConstraints(blue);
-    return new RGBPixel(red, green, blue);
+    return new RGBPixel(this.enforceConstraints((int) Math.round(red)),
+            this.enforceConstraints((int) Math.round(green)),
+            this.enforceConstraints((int) Math.round(blue)));
   }
 
   @Override
