@@ -9,6 +9,8 @@
 ### **Description** <br>
 Image Manipulator is a Java image processing application with text-based, GUI, and command line functionality. It currently contains 10+ features including: uploading an image, saving an image to a device, flipping (vertical and horizontal), brightening/dimming, greyscaling, blurring, sharpening, applying a sepia filter, and downsizing an image. The application currently allows users to load or save an image in the formats .jpg, jpng, .ppm, and .bmp. When using the GUI, a histogram also displays the frequencies of each value (between 0-255) for the red, green, and blue values of each pixel. All functionality has been properly tested with JUnit.
 
+Additional modern features include edge detection, auto contrast stretching, and 90° rotation in both directions.
+
 ### **Final Product** <br>
 The GUI is shown below.
 
@@ -74,6 +76,18 @@ The lines above the scripts  represent explanations of what the scripts themselv
 
 ####applying a sepia tone to the image of the family <br>
 `sepia family family-sepia`
+
+####detect edges in the image of the family <br>
+`edge-detect family family-edges`
+
+####apply automatic per-channel contrast stretching to the image of the family <br>
+`auto-contrast family family-contrast`
+
+####rotate the image clockwise by 90 degrees <br>
+`rotate-clockwise family family-rotated-cw`
+
+####rotate the image counterclockwise by 90 degrees <br>
+`rotate-counterclockwise family family-rotated-ccw`
 
 ####save family-brighter in the ppm format in the res/family/ directory <br>
 `save res/family/family-brighter.ppm family-brighter`

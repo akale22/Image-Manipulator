@@ -9,6 +9,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import controller.commands.Load;
 import controller.commands.Save;
+import controller.commands.AutoContrast;
+import controller.commands.EdgeDetect;
+import controller.commands.RotateClockwise;
+import controller.commands.RotateCounterClockwise;
 import model.ImageModel;
 import model.enums.FlipType;
 import model.enums.GreyscaleComponentType;
@@ -109,6 +113,18 @@ public class ImageGUIControllerImpl implements ActionListener, ImageGUIControlle
         this.downsizeHelper();
         break;
       }
+      case "edge detect":
+        this.edgeDetectHelper();
+        break;
+      case "auto contrast":
+        this.autoContrastHelper();
+        break;
+      case "rotate clockwise":
+        this.rotateClockwiseHelper();
+        break;
+      case "rotate counterclockwise":
+        this.rotateCounterClockwiseHelper();
+        break;
       default:
         throw new IllegalArgumentException("Invalid action event!");
     }
@@ -348,6 +364,54 @@ public class ImageGUIControllerImpl implements ActionListener, ImageGUIControlle
     catch (IllegalArgumentException e) {
       view.renderErrorMessage("Downsizing increments must be a positive integer between 0 and 100" +
               " (including 0)!");
+    }
+  }
+
+  /**
+   * A helper method for carrying out edge detection functionality.
+   */
+  private void edgeDetectHelper() {
+    try {
+      new EdgeDetect("guiImage", "guiImage").execute(model);
+      this.updateView();
+    } catch (IllegalArgumentException e) {
+      view.renderErrorMessage("An image must be loaded before edges can be detected!");
+    }
+  }
+
+  /**
+   * A helper method for carrying out auto contrast functionality.
+   */
+  private void autoContrastHelper() {
+    try {
+      new AutoContrast("guiImage", "guiImage").execute(model);
+      this.updateView();
+    } catch (IllegalArgumentException e) {
+      view.renderErrorMessage("An image must be loaded before auto contrast can be applied!");
+    }
+  }
+
+  /**
+   * A helper method for carrying out 90 degree clockwise rotation.
+   */
+  private void rotateClockwiseHelper() {
+    try {
+      new RotateClockwise("guiImage", "guiImage").execute(model);
+      this.updateView();
+    } catch (IllegalArgumentException e) {
+      view.renderErrorMessage("An image must be loaded before it can be rotated!");
+    }
+  }
+
+  /**
+   * A helper method for carrying out 90 degree counterclockwise rotation.
+   */
+  private void rotateCounterClockwiseHelper() {
+    try {
+      new RotateCounterClockwise("guiImage", "guiImage").execute(model);
+      this.updateView();
+    } catch (IllegalArgumentException e) {
+      view.renderErrorMessage("An image must be loaded before it can be rotated!");
     }
   }
 }
